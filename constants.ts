@@ -85,14 +85,3 @@ export const DEVICE_SENSOR_LOG = [
   { timestamp: "2025-10-10T23:45:00Z", app_in_foreground: "전자책 리더", screen_on: false, touch_events_per_minute: 0, device_orientation: "face_down", is_charging: true, headphone_jack_in: false }
 ];
 
-// Note: The old SYSTEM_METRICS and USER_ACTIVITY_LOG are kept for now to avoid breaking existing components, but they are deprecated.
-export const SYSTEM_METRICS = {
-  id: "node1/metrics-alpha-v1",
-  metadata: { collector: "Mirror Universal", schema_version: "metrics-alpha-v1" },
-  metrics: { cpu: { load_1m: 1.46, usage_percent: 21.13 }, memory: { used_percent: 62.66 } },
-  timestamp: "2025-10-10T05:31:29+00:00"
-};
-export const USER_ACTIVITY_LOG = {
-  agent_interaction: { daily_average_minutes: 215, change_vs_previous_week_percent: -15, daily_breakdown_minutes: { mon: 240, tue: 280, wed: 180, thu: 190, fri: 220, sat: 205, sun: 190 } },
-  most_used_agents: [ { agent_name: "지피지기", minutes_spent: 185 }, { agent_name: "아인슈타인", minutes_spent: 150 } ]
-};
