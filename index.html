@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Turtle Ship AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<style>
+  :root {
+    --font-serif: 'Nanum Myeongjo', serif;
+    --font-sans: 'Noto Sans KR', sans-serif;
+    
+    /* Starlight Aegis Protocol Palette */
+    --color-bg-deep: #0c0a1a; /* Cosmic Indigo */
+    --color-bg-medium: #1a1829;
+    --color-bg-light: #2c2a3e;
+    --color-accent-primary: #7DF9FF; /* Stardust Cyan */
+    --color-accent-secondary: #CFB53B; /* Old Gold */
+    --color-text-primary: #E0E0E0;
+    --color-text-secondary: #A0A0B0;
+    --color-border: #3c3a5e;
+  }
+  
+  body {
+    background-color: var(--color-bg-deep);
+    color: var(--color-text-primary);
+    overflow: hidden; /* Hide scrollbars from the body */
+  }
+
+  #starfield, #starfield2, #starfield3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: repeat;
+    background-position: 0 0;
+    animation: move-twink-back 200s linear infinite;
+  }
+
+  #starfield {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAACFJREFUOE9jZGBgEGHAD9Cgo2jooA2ENuADaAATEQAAfAEC/dSCa6wAAAAASUVORK5CYII=');
+    opacity: 0.5;
+    animation-duration: 50s;
+  }
+  #starfield2 {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAACFJREFUOE9jZGBgEGHAD9Cgo2jooA2ENuADaAATEQAAfAEC/dSCa6wAAAAASUVORK5CYII=');
+    opacity: 0.7;
+    animation-duration: 100s;
+  }
+  #starfield3 {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAACFJREFUOE9jZGBgEGHAD9Cgo2jooA2ENuADaAATEQAAfAEC/dSCa6wAAAAASUVORK5CYII=');
+    opacity: 0.9;
+    animation-duration: 150s;
+  }
+
+  @keyframes move-twink-back {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(125, 249, 255, 0.4);
+      border-color: rgba(125, 249, 255, 0.3);
+    }
+    70% {
+      box-shadow: 0 0 10px 15px rgba(125, 249, 255, 0);
+      border-color: rgba(125, 249, 255, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(125, 249, 255, 0);
+      border-color: rgba(125, 249, 255, 0.3);
+    }
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 1.8s ease-out;
+  }
+</style>
+</head>
+  <body>
+    <div id="starfield"></div>
+    <div id="starfield2"></div>
+    <div id="starfield3"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
